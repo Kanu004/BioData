@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Resume / Bio Data</title>
+    <title>Bio Data</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         
@@ -189,20 +189,15 @@
 </head>
 <body>
 
-<div class="control-panel">
-    <button id="editBtn" class="btn btn-edit" onclick="toggleEditMode()">Edit Resume</button>
-    <button id="saveBtn" class="btn btn-save" onclick="toggleEditMode()">Save Changes</button>
-</div>
-
 <div class="resume-container" id="resume">
     
     <!-- HEADER -->
     <header class="resume-header">
         <div class="header-main data-field">
-            <span class="field-value" style="font-size: 32px; font-weight: 700; color: #111827;">John Doe</span>
+            <span class="field-value" style="font-size: 32px; font-weight: 700; color: #111827;">Kanika Thakur</span>
             <input type="text" class="edit-input" value="John Doe" style="font-size: 24px; font-weight: 700;">
             
-            <span class="field-value title">Full Stack Web Developer</span>
+            <span class="field-value title">Aspiring AI/ML Analst</span>
             <input type="text" class="edit-input" value="Full Stack Web Developer" style="margin-top: 5px;">
         </div>
     </header>
@@ -213,12 +208,12 @@
         <div class="section-content">
             <div class="data-field">
                 <div class="field-label">Email</div>
-                <div class="field-value">johndoe@example.com</div>
+                <div class="field-value">kanika@example.com</div>
                 <input type="email" class="edit-input" value="johndoe@example.com">
             </div>
             <div class="data-field">
                 <div class="field-label">Phone</div>
-                <div class="field-value">+1 (555) 012-3456</div>
+                <div class="field-value">8580680190</div>
                 <input type="text" class="edit-input" value="+1 (555) 012-3456">
             </div>
             <div class="data-field full-row">
@@ -235,22 +230,22 @@
         <div class="section-content">
             <div class="data-field">
                 <div class="field-label">Date of Birth</div>
-                <div class="field-value">January 15, 1998</div>
+                <div class="field-value">August 15, 2004</div>
                 <input type="text" class="edit-input" value="January 15, 1998">
             </div>
             <div class="data-field">
                 <div class="field-label">Gender</div>
-                <div class="field-value">Male</div>
+                <div class="field-value">Female</div>
                 <input type="text" class="edit-input" value="Male">
             </div>
             <div class="data-field">
                 <div class="field-label">Nationality</div>
-                <div class="field-value">American</div>
+                <div class="field-value">Indian</div>
                 <input type="text" class="edit-input" value="American">
             </div>
             <div class="data-field">
                 <div class="field-label">Languages</div>
-                <div class="field-value">English, Spanish</div>
+                <div class="field-value">English, Hindi</div>
                 <input type="text" class="edit-input" value="English, Spanish">
             </div>
         </div>
@@ -262,7 +257,7 @@
         <div class="section-content">
             <div class="data-field full-row">
                 <div class="field-label">Highest Degree</div>
-                <div class="field-value" style="font-weight: 600;">B.S. in Computer Science</div>
+                <div class="field-value" style="font-weight: 600;">B.Tech. in Computer Science</div>
                 <input type="text" class="edit-input" value="B.S. in Computer Science" style="font-weight: 600;">
                 
                 <div class="field-value" style="color: #6b7280; font-size: 14px; margin-top: 2px;">Stanford University (2016 - 2020)</div>
@@ -283,38 +278,5 @@
     </section>
 
 </div>
-
-<script>
-function toggleEditMode() {
-    const resume = document.getElementById('resume');
-    const editBtn = document.getElementById('editBtn');
-    const saveBtn = document.getElementById('saveBtn');
-    
-    // Check if we are currently editing
-    const isEditing = resume.classList.contains('editing');
-    
-    if (isEditing) {
-        // SAVING MODE: Transfer input values back to text views
-        const fields = resume.querySelectorAll('.data-field');
-        fields.forEach(field => {
-            const input = field.querySelector('.edit-input');
-            const valueDisplay = field.querySelector('.field-value');
-            if (input && valueDisplay) {
-                valueDisplay.textContent = input.value;
-            }
-        });
-        
-        resume.classList.remove('editing');
-        editBtn.style.display = 'inline-block';
-        saveBtn.style.display = 'none';
-    } else {
-        // EDITING MODE: Reveal inputs
-        resume.classList.add('editing');
-        editBtn.style.display = 'none';
-        saveBtn.style.display = 'inline-block';
-    }
-}
-</script>
-
 </body>
 </html>
